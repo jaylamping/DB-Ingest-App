@@ -22,10 +22,8 @@ export class Database {
     this.mongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
       if (err) {
         console.log('fail');
-        Main.default.sendToRenderer('test', 'fail');
       } else {
-        console.log('success');
-        Main.default.sendToRenderer('test', 'success');      
+        console.log('success');    
       }
     });
   };
