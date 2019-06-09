@@ -11,7 +11,7 @@
 <body>
   <h1>Settings</h1>
 
-  <form class='ui form'>
+  <div class='ui form'>
     <h3>Database Name</h3>
     <div class='ui input'>
       <input type='text' placeholder='Database Name...' name='dbname' id='db-name'>
@@ -29,17 +29,31 @@
 
     <br><br>
 
-    <button class='ui button' id='test-db-connection'>
+    <button class='ui loading button' id='test-db-connection'>
       Test Connection
     </button>
-    <button class='ui primary button' id='save-settings'>
+    <button class='ui disabled primary button' id='save-settings'>
       Save
     </button>
     <div class="ui error message"></div>
-  </form>
+  </div>
 </body>
 
 <script>
+
+  let {remote} = require('electron');
+  let path = require('path');
+  let appPath = remote.app.getAppPath();
+  const { settings } = require(path.resolve(appPath, './dist/settings.js'));
+  // event sender/listeners
+  document.getElementById('test-db-connection').addEventListener('click', () => {
+    let payload = {
+      name: document.getElementById('db-name').value,
+      url: document.getElementById('db-url').value,
+      port: document.getElementById('db-port').value
+    };
+    console.log(payload);
+  })
   // validation logic for test and save buttons
   $('form')
   .form({

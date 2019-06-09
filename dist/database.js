@@ -3,7 +3,7 @@
 // database logic //
 // -------------- //
 Object.defineProperty(exports, "__esModule", { value: true });
-const Main = require("./main");
+const main_1 = require("./main");
 const mongodb = require("mongodb");
 class Database {
     constructor() {
@@ -21,11 +21,11 @@ class Database {
         this.mongoClient.connect(uri, { useNewUrlParser: true }, function (err, db) {
             if (err) {
                 console.log('fail');
-                Main.default.sendToRenderer('test', 'fail');
+                main_1.mainWindow.webContents.send('test-connection', false);
             }
             else {
                 console.log('success');
-                Main.default.sendToRenderer('test', 'success');
+                main_1.mainWindow.webContents.send('test-connection', true);
             }
         });
     }

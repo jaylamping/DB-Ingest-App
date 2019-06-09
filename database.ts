@@ -2,7 +2,7 @@
 // database logic //
 // -------------- //
 
-import * as Main from './main';
+import { mainWindow } from './main';
 import * as mongodb from "mongodb";
 
 export class Database {
@@ -11,6 +11,7 @@ export class Database {
 
   public constructor() {};
 
+  
   /**
    * Checks for successful database connection based on parameters and returns result to renderer
    * @param url - DB url
@@ -22,8 +23,10 @@ export class Database {
     this.mongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
       if (err) {
         console.log('fail');
+        mainWindow.webContents.send('test-connection', false);
       } else {
-        console.log('success');    
+        console.log('success'); 
+        mainWindow.webContents.send('test-connection', true);   
       }
     });
   };

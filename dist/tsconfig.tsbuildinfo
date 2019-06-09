@@ -310,12 +310,16 @@
         "signature": "33ad6d92e8a17ff180813ca1f6c24168b9e013685ce8f71fa4d029c8087966e8"
       },
       "c:/users/joey/code/stocks/dbingest app/main.ts": {
-        "version": "678f0be29e7e2340d7242a69ffa07d231b050c8dd3f29055d2369b9ca43e5e71",
-        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
+        "version": "9fbf67e6db20840eae18a5796a37ea707e386a92f280318657a7806272254494",
+        "signature": "75c950dc86d3498e59d68b395e013638ae093774b78e233779dc34c93d990db3"
       },
       "c:/users/joey/code/stocks/dbingest app/database.ts": {
-        "version": "c27e5ef754ce11ee5085d80a8626ddde3c3a8dfad5aeda6a64f4c55a04528bcf",
+        "version": "5c144b24bdf0299eb42ad6dbaeca70187dd6d94d0a743720fa63e14302357577",
         "signature": "7191f1639201defc8c30f92c813dc600d34bd4ec2b152ac7c9807a96a4147329"
+      },
+      "c:/users/joey/code/stocks/dbingest app/settings.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       }
     },
     "options": {
@@ -742,6 +746,10 @@
       ],
       "c:/users/joey/code/stocks/dbingest app/database.ts": [
         "c:/users/joey/code/stocks/dbingest app/main.ts",
+        "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
+        "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "c:/users/joey/code/stocks/dbingest app/settings.ts": [
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
       ]
@@ -1220,28 +1228,9 @@
       "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/index.d.ts",
       "c:/users/joey/code/stocks/dbingest app/node_modules/electron/electron.d.ts",
       "c:/users/joey/code/stocks/dbingest app/request.ts",
-      [
-        "c:/users/joey/code/stocks/dbingest app/database.ts",
-        [
-          {
-            "file": "c:/users/joey/code/stocks/dbingest app/database.ts",
-            "start": 698,
-            "length": 7,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'default' does not exist on type 'typeof import(\"C:/Users/Joey/code/Stocks/dbIngest App/main\")'."
-          },
-          {
-            "file": "c:/users/joey/code/stocks/dbingest app/database.ts",
-            "start": 801,
-            "length": 7,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'default' does not exist on type 'typeof import(\"C:/Users/Joey/code/Stocks/dbIngest App/main\")'."
-          }
-        ]
-      ],
-      "c:/users/joey/code/stocks/dbingest app/main.ts"
+      "c:/users/joey/code/stocks/dbingest app/main.ts",
+      "c:/users/joey/code/stocks/dbingest app/database.ts",
+      "c:/users/joey/code/stocks/dbingest app/settings.ts"
     ]
   },
   "version": "3.4.5"

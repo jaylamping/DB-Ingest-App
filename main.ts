@@ -8,8 +8,8 @@ import { Database } from './database';
 import * as url from 'url';
 import * as path from 'path';
 
-let mainWindow;
-let settingsWindow;
+var mainWindow;
+var settingsWindow;
 let db = new Database;
 let request = new Request;
 
@@ -50,19 +50,10 @@ function createSettingsWindow() {
 };
 
 /**
- * Sends data to renderer process
- * @param channel - Desired channel to send data across
- * @param data - Data to be sent
- */
-function sendToRenderer(channel, data) {
-  settingsWindow.webContents.send(channel, data);
-};
-
-/**
  * Main logic for application
  * @param app - App object from Electron
  */
-function main(app) {
+function main() {
   app.on('ready', onReady);
   app.on('window-all-closed', onClose);
 }
@@ -90,6 +81,7 @@ let menuTemplate = [
         label: 'Settings',
         click() {
           createSettingsWindow();
+          settingsWindow.webContents.openDevTools({mode: 'undocked'});
         }
       }
     ]
@@ -108,5 +100,6 @@ let menuTemplate = [
   }
 ];
 
-main(app);
+main();
 
+export { mainWindow };

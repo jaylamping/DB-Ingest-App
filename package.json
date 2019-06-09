@@ -15,5 +15,8 @@
     "mongodb": "^3.2.7",
     "semantic-ui-calendar": "0.0.8",
     "typescript": "^3.5.1"
+  },
+  "devDependencies": {
+    "devtron": "^1.4.0"
   }
 }
