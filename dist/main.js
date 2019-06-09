@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
 const url = require("url");
 const path = require("path");
-// temp change
+// temp change again
 let win;
 electron_1.app.on("ready", () => {
     win = new electron_1.BrowserWindow({ width: 500, height: 700 });
