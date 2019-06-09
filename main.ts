@@ -46,27 +46,40 @@ function createSettingsWindow() {
 
 const menuTemplate = [
   {
-    label: "File",
+    label: 'File',
     submenu: [
       {
-        label: "About"
+        label: 'About'
       },
       {
-        label: "Exit",
+        label: 'Exit',
         click() {
           app.quit();
+        },
+        accelerator: process.platform == 'darwin' ? 'Command+Q' :'CTRL+Q'
+      }
+    ]
+  },
+  {
+    label: 'Database',
+    submenu: [
+      {
+        label: 'Settings',
+        click() {
+          createSettingsWindow();
         }
       }
     ]
   },
   {
-    label: "Database",
+    label: 'Debug',
     submenu: [
       {
-        label: "Settings",
+        label: 'Dev Tools',
         click() {
-          createSettingsWindow();
-        }
+          win.toggleDevTools();
+        },
+        accelerator: process.platform == 'darwin' ? 'Command+I' : 'CTRL+I'
       }
     ]
   }

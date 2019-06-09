@@ -3,13 +3,38 @@
 
 <head>
   <title>Data Ingest App</title>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.min.css">
-  <script src="./semantic/dist/semantic.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'></script>
+  <link rel='stylesheet' type='text/css' href='./semantic/dist/semantic.min.css'>
+  <script src='./semantic/dist/semantic.min.js'></script>
 </head>
 
 <body>
   <h1>Settings</h1>
+
+  <h3>Database Name</h3>
+  <div class='ui input'>
+    <input type='text' placeholder='Database Name...'>
+  </div>
+
+  <h3>Database URL</h3>
+  <div class='ui input'>
+    <input type='text' value='localhost'>
+  </div>
+
+  <h3>Database Port</h3>
+  <div class='ui input'>
+    <input type='text' value='27017'>
+  </div>
+
+  <br><br>
+
+  <button class='ui button' id='test-db-connection'>
+    Test Connection
+  </button>
+  <button class='ui primary button' id='save-settings'>
+    Save
+  </button>
+
 
 </body>
 
