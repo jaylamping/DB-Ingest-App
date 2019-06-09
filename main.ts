@@ -8,6 +8,8 @@ import { Database } from './database';
 import * as url from 'url';
 import * as path from 'path';
 
+// temp change
+
 let win;
 
 app.on("ready", () => {

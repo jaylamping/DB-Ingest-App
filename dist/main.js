@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
 const url = require("url");
 const path = require("path");
+// temp change
 let win;
 electron_1.app.on("ready", () => {
     win = new electron_1.BrowserWindow({ width: 500, height: 700 });
@@ -22,6 +23,9 @@ electron_1.app.on("ready", () => {
     const mainMenu = electron_1.Menu.buildFromTemplate(menuTemplate);
     electron_1.Menu.setApplicationMenu(mainMenu);
 });
+/**
+ * Create database settings window
+ */
 function createSettingsWindow() {
     let settingsWindow = new electron_1.BrowserWindow({ width: 400, height: 600 });
     settingsWindow.loadURL(url.format({
@@ -30,15 +34,16 @@ function createSettingsWindow() {
         slashes: true
     }));
 }
+;
 const menuTemplate = [
     {
-        label: 'File',
+        label: "File",
         submenu: [
             {
-                label: 'About'
+                label: "About"
             },
             {
-                label: 'Exit',
+                label: "Exit",
                 click() {
                     electron_1.app.quit();
                 }
@@ -46,14 +51,14 @@ const menuTemplate = [
         ]
     },
     {
-        label: 'Database',
+        label: "Database",
         submenu: [
             {
-                label: 'Settings',
+                label: "Settings",
                 click() {
                     createSettingsWindow();
                 }
-            },
+            }
         ]
     }
 ];
