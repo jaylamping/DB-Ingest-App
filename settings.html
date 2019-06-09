@@ -11,38 +11,74 @@
 <body>
   <h1>Settings</h1>
 
-  <h3>Database Name</h3>
-  <div class='ui input'>
-    <input type='text' placeholder='Database Name...'>
-  </div>
+  <form class='ui form'>
+    <h3>Database Name</h3>
+    <div class='ui input'>
+      <input type='text' placeholder='Database Name...' name='dbname' id='db-name'>
+    </div>
 
-  <h3>Database URL</h3>
-  <div class='ui input'>
-    <input type='text' value='localhost'>
-  </div>
+    <h3>Database URL</h3>
+    <div class='ui input'>
+      <input type='text' value='localhost' placeholder='Database URL...'name='dburl' id='db-url'>
+    </div>
 
-  <h3>Database Port</h3>
-  <div class='ui input'>
-    <input type='text' value='27017'>
-  </div>
+    <h3>Database Port</h3>
+    <div class='ui input'>
+      <input type='text' value='27017' placeholder='Database Port...' name='dbport' id='db-port'>
+    </div>
 
-  <br><br>
+    <br><br>
 
-  <button class='ui button' id='test-db-connection'>
-    Test Connection
-  </button>
-  <button class='ui primary button' id='save-settings'>
-    Save
-  </button>
-
-
+    <button class='ui button' id='test-db-connection'>
+      Test Connection
+    </button>
+    <button class='ui primary button' id='save-settings'>
+      Save
+    </button>
+    <div class="ui error message"></div>
+  </form>
 </body>
 
 <script>
-  // initialize dropdowns
-  $('.dropdown')
-    .dropdown()
-  ;
+  // validation logic for test and save buttons
+  $('form')
+  .form({
+    on: 'blur',
+    fields: {
+      name: {
+        identifier  : 'dbname',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter db name'
+          }
+        ]
+      },
+      url: {
+        identifier  : 'dburl',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter db url'
+          }
+        ]
+      },
+      port: {
+        identifier  : 'dbport',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter db port'
+          },
+          {
+            type : 'number',
+            prompt : 'Please enter a valid port number'
+          }
+        ]
+      }
+    }
+  });
+
 </script>
 
 </html>
