@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Data Ingest App</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/semantic-ui-calendar/dist/calendar.min.css">
+  <script src="./semantic/dist/semantic.min.js"></script>
+  <script src="./node_modules/semantic-ui-calendar/dist/calendar.min.js"></script>
+
+</head>
+
+<body>
+  <h1>Data Ingest App</h1>
+
+  <h3>Currency Pairs</h3>
+  <div class="ui fluid multiple search selection dropdown">
+    <input type="hidden" name="pairing">
+    <i class="dropdown icon"></i>
+    <div class="default text">Select Currency Pair</div>
+    <div class="menu">
+      <div class="item" data-value="au"><i class="au flag"></i>AUD->CAD</div>
+      <div class="item" data-value="au2"><i class="au flag"></i>AUD->USD</div>
+      <div class="item" data-value="cad"><i class="ca flag"></i>CAD->CHF</div>
+      <div class="item" data-value="eu"><i class="eu flag"></i>EUR->CAD</div>
+      <div class="item" data-value="eu2"><i class="eu flag"></i>EUR->CHF</div>
+      <div class="item" data-value="gbp"><i class="gb uk flag"></i>GBP->USD</div>
+      <div class="item" data-value="nz"><i class="nz flag"></i>NZD->USD</div>
+      <div class="item" data-value="us"><i class="us flag"></i>USD->CAD</div>
+      <div class="item" data-value="us1"><i class="us flag"></i>USD->CHF</div>
+      <div class="item" data-value="us2"><i class="us flag"></i>USD->JPY</div>
+      <div class="item" data-value="silver"></i>XAG->USD</div>
+      <div class="item" data-value="gold"></i>XAU->USD</div>
+    </div>
+  </div>
+
+  <h3>Resolution</h3>
+  <div class="ui selection dropdown">
+    <input type="hidden" name="gender">
+    <i class="dropdown icon"></i>
+    <div class="default text">Select Resolution</div>
+    <div class="menu">
+      <div class="item" data-value="1">1 Min</div>
+      <div class="item" data-value="5">5 Min</div>
+      <div class="item" data-value="15">15 Min</div>
+      <div class="item" data-value="30">30 Min</div>
+      <div class="item" data-value="60">60 Min</div>
+      <div class="item" data-value="240">240 Min</div>
+      <div class="item" data-value="1440">1 Day</div>
+      <div class="item" data-value="10080">1 Week</div>
+      <div class="item" data-value="302400">1 Month</div>
+    </div>
+  </div>
+
+  <h3>Date Range</h3>
+  <div class="ui form">
+    <div class="two fields">
+      <div class="field">
+        <label>Start date</label>
+        <div class="ui calendar" id="rangestart">
+          <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="Start">
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>End date</label>
+        <div class="ui calendar" id="rangeend">
+          <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="End">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="ui primary button">
+    Ingest
+  </button>
+  <button class="ui button">
+    Discard
+  </button>
+
+</body>
+
+<script>
+  // initialize dropdowns
+  $('.dropdown')
+    .dropdown()
+  ;
+  $('#rangestart').calendar({
+    type: 'date',
+    endCalendar: $('#rangeend')
+  });
+  $('#rangeend').calendar({
+    type: 'date',
+    startCalendar: $('#rangestart')
+  });
+</script>
+
+</html>
