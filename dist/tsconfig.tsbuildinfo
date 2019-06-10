@@ -310,16 +310,16 @@
         "signature": "33ad6d92e8a17ff180813ca1f6c24168b9e013685ce8f71fa4d029c8087966e8"
       },
       "c:/users/joey/code/stocks/dbingest app/main.ts": {
-        "version": "9fbf67e6db20840eae18a5796a37ea707e386a92f280318657a7806272254494",
-        "signature": "75c950dc86d3498e59d68b395e013638ae093774b78e233779dc34c93d990db3"
+        "version": "43cdcab31aafe6e54766b34ff76fcb2e27a3172901d127d57e2958933a105c5b",
+        "signature": "1ac5d1b4869abe912e68af7330eedbfab7acf9112b6d9370b00817d5b7e896b0"
       },
       "c:/users/joey/code/stocks/dbingest app/database.ts": {
-        "version": "5c144b24bdf0299eb42ad6dbaeca70187dd6d94d0a743720fa63e14302357577",
-        "signature": "7191f1639201defc8c30f92c813dc600d34bd4ec2b152ac7c9807a96a4147329"
+        "version": "5579a62672dcf93e2e9f2f76f9298ddc55f5cc2ab921b099ae09acac1c0c4642",
+        "signature": "11092d9fc2000dee525472183e395e3ba8ccabe621c1c93e70cf6e163f17760a"
       },
       "c:/users/joey/code/stocks/dbingest app/settings.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        "version": "a36269a813343db086d7f762f6b5b9b49307099b51a716e17f39285185413e89",
+        "signature": "e3bf40d553fa5f72294543f4368711d79f5f1832e1f716a9afb1926b92594908"
       }
     },
     "options": {
@@ -1230,7 +1230,43 @@
       "c:/users/joey/code/stocks/dbingest app/request.ts",
       "c:/users/joey/code/stocks/dbingest app/main.ts",
       "c:/users/joey/code/stocks/dbingest app/database.ts",
-      "c:/users/joey/code/stocks/dbingest app/settings.ts"
+      [
+        "c:/users/joey/code/stocks/dbingest app/settings.ts",
+        [
+          {
+            "file": "c:/users/joey/code/stocks/dbingest app/settings.ts",
+            "start": 464,
+            "length": 5,
+            "code": 2339,
+            "category": 1,
+            "messageText": "Property 'value' does not exist on type 'HTMLElement'."
+          },
+          {
+            "file": "c:/users/joey/code/stocks/dbingest app/settings.ts",
+            "start": 517,
+            "length": 5,
+            "code": 2339,
+            "category": 1,
+            "messageText": "Property 'value' does not exist on type 'HTMLElement'."
+          },
+          {
+            "file": "c:/users/joey/code/stocks/dbingest app/settings.ts",
+            "start": 572,
+            "length": 5,
+            "code": 2339,
+            "category": 1,
+            "messageText": "Property 'value' does not exist on type 'HTMLElement'."
+          },
+          {
+            "file": "c:/users/joey/code/stocks/dbingest app/settings.ts",
+            "start": 1101,
+            "length": 1,
+            "messageText": "Cannot find name '$'. Do you need to install type definitions for jQuery? Try `npm i @types/jquery`.",
+            "category": 1,
+            "code": 2581
+          }
+        ]
+      ]
     ]
   },
   "version": "3.4.5"

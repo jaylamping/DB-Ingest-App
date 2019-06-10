@@ -3,9 +3,18 @@
 
 <head>
   <title>Data Ingest App</title>
+  <script>if (typeof module === 'object') {
+    window.module = module; 
+    module = undefined;}
+    // my hero 
+    // https://stackoverflow.com/a/37480521
+  </script>
   <script src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'></script>
   <link rel='stylesheet' type='text/css' href='./semantic/dist/semantic.min.css'>
   <script src='./semantic/dist/semantic.min.js'></script>
+  <script>if (window.module) 
+    module = window.module;
+  </script>
 </head>
 
 <body>
@@ -29,7 +38,7 @@
 
     <br><br>
 
-    <button class='ui loading button' id='test-db-connection'>
+    <button class='ui button' id='test-db-connection'>
       Test Connection
     </button>
     <button class='ui disabled primary button' id='save-settings'>
@@ -39,60 +48,6 @@
   </div>
 </body>
 
-<script>
-
-  let {remote} = require('electron');
-  let path = require('path');
-  let appPath = remote.app.getAppPath();
-  const { settings } = require(path.resolve(appPath, './dist/settings.js'));
-  // event sender/listeners
-  document.getElementById('test-db-connection').addEventListener('click', () => {
-    let payload = {
-      name: document.getElementById('db-name').value,
-      url: document.getElementById('db-url').value,
-      port: document.getElementById('db-port').value
-    };
-    console.log(payload);
-  })
-  // validation logic for test and save buttons
-  $('form')
-  .form({
-    on: 'blur',
-    fields: {
-      name: {
-        identifier  : 'dbname',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Please enter db name'
-          }
-        ]
-      },
-      url: {
-        identifier  : 'dburl',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Please enter db url'
-          }
-        ]
-      },
-      port: {
-        identifier  : 'dbport',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Please enter db port'
-          },
-          {
-            type : 'number',
-            prompt : 'Please enter a valid port number'
-          }
-        ]
-      }
-    }
-  });
-
-</script>
+<script src='./dist/settings.js'></script>
 
 </html>

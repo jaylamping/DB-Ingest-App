@@ -21,15 +21,17 @@ class Database {
         this.mongoClient.connect(uri, { useNewUrlParser: true }, function (err, db) {
             if (err) {
                 console.log('fail');
-                main_1.mainWindow.webContents.send('test-connection', false);
+                main_1.settingsWindow.webContents.send('test-connection', false);
             }
             else {
                 console.log('success');
-                main_1.mainWindow.webContents.send('test-connection', true);
+                main_1.settingsWindow.webContents.send('test-connection', true);
             }
         });
     }
     ;
+    testListener() {
+    }
 }
 exports.Database = Database;
 ;

@@ -2,7 +2,7 @@
 // main process //
 // ------------ //
 
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Menu, ipcMain } from 'electron';
 import { Request } from './request';
 import { Database } from './database';
 import * as url from 'url';
@@ -13,12 +13,14 @@ var settingsWindow;
 let db = new Database;
 let request = new Request;
 
-let temp = db.testConnection('localhost', 27017, 'forex_pairs');
-console.log(temp);
-
-
 function onReady() {
-  mainWindow = new BrowserWindow({ width: 500, height: 700});
+  mainWindow = new BrowserWindow({ 
+    width: 500, 
+    height: 700,
+    webPreferences: {
+      nodeIntegration: true
+    }  
+  });
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "../main.html"),
@@ -40,7 +42,13 @@ function onClose() {
 };
 
 function createSettingsWindow() {
-  settingsWindow = new BrowserWindow({width: 400, height: 600});
+  settingsWindow = new BrowserWindow({
+    width: 400, 
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
   settingsWindow.loadURL(url.format({
     pathname: path.join(__dirname, '../settings.html'),
     protocol: 'file:',
@@ -48,6 +56,10 @@ function createSettingsWindow() {
   }));
   settingsWindow.removeMenu();
 };
+
+ipcMain.on('test-connection', (event, arg) => {
+  db.testConnection(arg.url, arg.port, arg.name);
+})
 
 /**
  * Main logic for application
@@ -102,4 +114,4 @@ let menuTemplate = [
 
 main();
 
-export { mainWindow };
+export { settingsWindow };

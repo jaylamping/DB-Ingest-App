@@ -9,14 +9,18 @@ const database_1 = require("./database");
 const url = require("url");
 const path = require("path");
 var mainWindow;
-exports.mainWindow = mainWindow;
 var settingsWindow;
+exports.settingsWindow = settingsWindow;
 let db = new database_1.Database;
 let request = new request_1.Request;
-let temp = db.testConnection('localhost', 27017, 'forex_pairs');
-console.log(temp);
 function onReady() {
-    exports.mainWindow = mainWindow = new electron_1.BrowserWindow({ width: 500, height: 700 });
+    mainWindow = new electron_1.BrowserWindow({
+        width: 500,
+        height: 700,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, "../main.html"),
         protocol: "file:",
@@ -30,12 +34,18 @@ function onReady() {
 function onClose() {
     mainWindow.on("closed", () => {
         // dereference main window object when window is closed
-        exports.mainWindow = mainWindow = null;
+        mainWindow = null;
     });
 }
 ;
 function createSettingsWindow() {
-    settingsWindow = new electron_1.BrowserWindow({ width: 400, height: 600 });
+    exports.settingsWindow = settingsWindow = new electron_1.BrowserWindow({
+        width: 400,
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     settingsWindow.loadURL(url.format({
         pathname: path.join(__dirname, '../settings.html'),
         protocol: 'file:',
@@ -44,6 +54,9 @@ function createSettingsWindow() {
     settingsWindow.removeMenu();
 }
 ;
+electron_1.ipcMain.on('test-connection', (event, arg) => {
+    db.testConnection(arg.url, arg.port, arg.name);
+});
 /**
  * Main logic for application
  * @param app - App object from Electron
