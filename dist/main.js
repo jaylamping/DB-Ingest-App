@@ -8,14 +8,21 @@ const request_1 = require("./request");
 const database_1 = require("./database");
 const url = require("url");
 const path = require("path");
-var mainWindow;
-var settingsWindow;
+let mainWindow;
+let settingsWindow;
 exports.settingsWindow = settingsWindow;
 let db = new database_1.Database;
 let request = new request_1.Request;
+let dbName;
+let dbUrl;
+let dbPort;
+console.log(electron_1.app.getPath('userData'));
 function onReady() {
     mainWindow = new electron_1.BrowserWindow({
+        show: false,
+        minWidth: 500,
         width: 500,
+        minHeight: 700,
         height: 700,
         webPreferences: {
             nodeIntegration: true
@@ -26,6 +33,10 @@ function onReady() {
         protocol: "file:",
         slashes: true
     }));
+    // smooth opening animation
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show();
+    });
     // build main menu
     const mainMenu = electron_1.Menu.buildFromTemplate(menuTemplate);
     electron_1.Menu.setApplicationMenu(mainMenu);
@@ -35,6 +46,7 @@ function onClose() {
     mainWindow.on("closed", () => {
         // dereference main window object when window is closed
         mainWindow = null;
+        electron_1.app.quit();
     });
 }
 ;
@@ -54,8 +66,20 @@ function createSettingsWindow() {
     settingsWindow.removeMenu();
 }
 ;
-electron_1.ipcMain.on('test-connection', (event, arg) => {
+// ipc listeners
+electron_1.ipcMain.on('test-db-connection', (event, arg) => {
     db.testConnection(arg.url, arg.port, arg.name);
+});
+electron_1.ipcMain.on('db-info', (event, arg) => {
+    dbName = arg.name,
+        dbPort = arg.port,
+        dbUrl = arg.url;
+    settingsWindow.close();
+});
+electron_1.ipcMain.on('test', () => {
+    console.log(dbName);
+    console.log(dbPort);
+    console.log(dbUrl);
 });
 /**
  * Main logic for application

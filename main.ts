@@ -8,14 +8,23 @@ import { Database } from './database';
 import * as url from 'url';
 import * as path from 'path';
 
-var mainWindow;
-var settingsWindow;
+let mainWindow;
+let settingsWindow;
 let db = new Database;
 let request = new Request;
 
+let dbName;
+let dbUrl;
+let dbPort;
+
+console.log(app.getPath('userData'));
+
 function onReady() {
-  mainWindow = new BrowserWindow({ 
-    width: 500, 
+  mainWindow = new BrowserWindow({
+    show: false,
+    minWidth: 500,
+    width: 500,
+    minHeight: 700,
     height: 700,
     webPreferences: {
       nodeIntegration: true
@@ -28,6 +37,10 @@ function onReady() {
       slashes: true
     })
   );
+  // smooth opening animation
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+  })
   // build main menu
   const mainMenu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(mainMenu);
@@ -37,6 +50,7 @@ function onClose() {
   mainWindow.on("closed", () => {
     // dereference main window object when window is closed
     mainWindow = null;
+    app.quit();
   
   });
 };
@@ -55,11 +69,26 @@ function createSettingsWindow() {
     slashes: true
   }));
   settingsWindow.removeMenu();
+  
 };
 
-ipcMain.on('test-connection', (event, arg) => {
+// ipc listeners
+ipcMain.on('test-db-connection', (event, arg) => {
   db.testConnection(arg.url, arg.port, arg.name);
-})
+});
+
+ipcMain.on('db-info', (event, arg) => {
+  dbName = arg.name,
+  dbPort = arg.port,
+  dbUrl = arg.url
+  settingsWindow.close();
+});
+
+ipcMain.on('test', () => {
+  console.log(dbName);
+  console.log(dbPort);
+  console.log(dbUrl);
+});
 
 /**
  * Main logic for application

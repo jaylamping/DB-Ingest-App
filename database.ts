@@ -22,10 +22,10 @@ export class Database {
     this.mongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
       if (err) {
         console.log('fail');
-        settingsWindow.webContents.send('test-connection', false);
+        settingsWindow.webContents.send('test-db-connection', false);
       } else {
         console.log('success'); 
-        settingsWindow.webContents.send('test-connection', true);   
+        settingsWindow.webContents.send('test-db-connection', true);   
       }
     });
   };

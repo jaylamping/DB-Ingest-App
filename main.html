@@ -85,16 +85,18 @@
     </div>
   </div>
 
-  <button class="ui primary button">
+  <button class="ui primary button" id='ingest-btn'>
     Ingest
   </button>
-  <button class="ui button">
+  <button class="ui button" id='discard-btn'>
     Discard
   </button>
 
 </body>
 
 <script>
+
+  const { ipcRenderer } = require('electron');
   // initialize dropdowns
   $('.dropdown')
     .dropdown()
@@ -108,6 +110,13 @@
     type: 'date',
     startCalendar: $('#rangestart')
   });
+
+  let discardBtn = document.getElementById('discard-btn');
+  
+  discardBtn.addEventListener('click', () => {
+    ipcRenderer.send('test', 'hi');
+  });
+  
 </script>
 
 </html>
