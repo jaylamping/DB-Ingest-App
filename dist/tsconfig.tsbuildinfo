@@ -310,15 +310,15 @@
         "signature": "33ad6d92e8a17ff180813ca1f6c24168b9e013685ce8f71fa4d029c8087966e8"
       },
       "c:/users/joey/code/stocks/dbingest app/main.ts": {
-        "version": "0d1bbfb9a162b68d267dbebbff3ebdff7f41ccea44881292358b2669abf5db6b",
+        "version": "ae2a1e4c9db2b2dce74e126fa5a28bc38b094680854668cea32b6f9b20d66e58",
         "signature": "50290cc1850620b4241cb30a123ec05ec9ee812b6acb9e390f5c2f5b7962f912"
       },
       "c:/users/joey/code/stocks/dbingest app/database.ts": {
-        "version": "91c1d7e48baba723482eb831073258c21b7413cbaa1a27bf738993aedf1fbbe3",
-        "signature": "11092d9fc2000dee525472183e395e3ba8ccabe621c1c93e70cf6e163f17760a"
+        "version": "a63fe08d663f186bba05e153abbd6b0d59a0dbd9ac7914136277ed4d6b0626e2",
+        "signature": "7191f1639201defc8c30f92c813dc600d34bd4ec2b152ac7c9807a96a4147329"
       },
       "c:/users/joey/code/stocks/dbingest app/settings.ts": {
-        "version": "51a84317171ba02cadd2b55e02c267d36452a432349f27c95e1667207340ec63",
+        "version": "4c5dc60968e817dcbb8fe47b8a56c65bff49e0a726151eaab26ca9c004e547e4",
         "signature": "435504e33d9e5b2976531e26eab9825d30ed8ff01cec10ff6d489cb35389a9be"
       }
     },
@@ -1282,7 +1282,7 @@
           },
           {
             "file": "c:/users/joey/code/stocks/dbingest app/settings.ts",
-            "start": 1781,
+            "start": 1779,
             "length": 1,
             "messageText": "Cannot find name '$'. Do you need to install type definitions for jQuery? Try `npm i @types/jquery`.",
             "category": 1,

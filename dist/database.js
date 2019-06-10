@@ -30,8 +30,6 @@ class Database {
         });
     }
     ;
-    testListener() {
-    }
 }
 exports.Database = Database;
 ;

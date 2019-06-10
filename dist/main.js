@@ -76,11 +76,6 @@ electron_1.ipcMain.on('db-info', (event, arg) => {
         dbUrl = arg.url;
     settingsWindow.close();
 });
-electron_1.ipcMain.on('test', () => {
-    console.log(dbName);
-    console.log(dbPort);
-    console.log(dbUrl);
-});
 /**
  * Main logic for application
  * @param app - App object from Electron

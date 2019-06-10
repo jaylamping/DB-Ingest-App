@@ -2,6 +2,8 @@
 // request logic //
 // ------------- //
 
+import * as axios from 'axios';
+
 export class Request {
 
   private baseUrl = 'http://www.datadt.com/api/data/';

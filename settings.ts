@@ -67,7 +67,6 @@ saveBtn.addEventListener('click', () => {
 
 });
 
-
 // validation logic for test and save buttons
 $('form')
 .form({

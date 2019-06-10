@@ -30,8 +30,5 @@ export class Database {
     });
   };
 
-  public testListener() {
-
-  }
 
 };
