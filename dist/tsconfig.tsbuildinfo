@@ -305,12 +305,16 @@
         "version": "897f1691a2490b272cf251a80bc4b57504635ea7c2ec06e6c7bc152089410271",
         "signature": "897f1691a2490b272cf251a80bc4b57504635ea7c2ec06e6c7bc152089410271"
       },
+      "c:/users/joey/code/stocks/dbingest app/node_modules/axios/index.d.ts": {
+        "version": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371",
+        "signature": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371"
+      },
       "c:/users/joey/code/stocks/dbingest app/request.ts": {
-        "version": "7b0aace221eabdb3df9c746f30d8a78df84e122c1065ae3964dd15e7dc7128a3",
+        "version": "e6cbef061207da6ae2da326b540b57658f0ed352b2c3175c45126dd78a45ba19",
         "signature": "33ad6d92e8a17ff180813ca1f6c24168b9e013685ce8f71fa4d029c8087966e8"
       },
       "c:/users/joey/code/stocks/dbingest app/main.ts": {
-        "version": "ae2a1e4c9db2b2dce74e126fa5a28bc38b094680854668cea32b6f9b20d66e58",
+        "version": "17ecbc7be291216f71cb597e7633fdcb732949ce10fe97a5c0e95e67274b7182",
         "signature": "50290cc1850620b4241cb30a123ec05ec9ee812b6acb9e390f5c2f5b7962f912"
       },
       "c:/users/joey/code/stocks/dbingest app/database.ts": {
@@ -318,7 +322,7 @@
         "signature": "7191f1639201defc8c30f92c813dc600d34bd4ec2b152ac7c9807a96a4147329"
       },
       "c:/users/joey/code/stocks/dbingest app/settings.ts": {
-        "version": "4c5dc60968e817dcbb8fe47b8a56c65bff49e0a726151eaab26ca9c004e547e4",
+        "version": "073fed43e6c66429091175f3749c85700e577bc4920846f46b64a1632ef4289a",
         "signature": "435504e33d9e5b2976531e26eab9825d30ed8ff01cec10ff6d489cb35389a9be"
       }
     },
@@ -731,7 +735,12 @@
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "c:/users/joey/code/stocks/dbingest app/node_modules/axios/index.d.ts": [
+        "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
+        "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "c:/users/joey/code/stocks/dbingest app/request.ts": [
+        "c:/users/joey/code/stocks/dbingest app/node_modules/axios/index.d.ts",
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1148,6 +1157,10 @@
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/index.d.ts",
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
         "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "c:/users/joey/code/stocks/dbingest app/node_modules/axios/index.d.ts": [
+        "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/util.d.ts",
+        "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -1227,8 +1240,10 @@
       "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/globals.d.ts",
       "c:/users/joey/code/stocks/dbingest app/node_modules/@types/node/ts3.2/index.d.ts",
       "c:/users/joey/code/stocks/dbingest app/node_modules/electron/electron.d.ts",
+      "c:/users/joey/code/stocks/dbingest app/node_modules/axios/index.d.ts",
       "c:/users/joey/code/stocks/dbingest app/request.ts",
       "c:/users/joey/code/stocks/dbingest app/database.ts",
+      "c:/users/joey/code/stocks/dbingest app/main.ts",
       [
         "c:/users/joey/code/stocks/dbingest app/settings.ts",
         [
@@ -1282,15 +1297,14 @@
           },
           {
             "file": "c:/users/joey/code/stocks/dbingest app/settings.ts",
-            "start": 1779,
+            "start": 1784,
             "length": 1,
             "messageText": "Cannot find name '$'. Do you need to install type definitions for jQuery? Try `npm i @types/jquery`.",
             "category": 1,
             "code": 2581
           }
         ]
-      ],
-      "c:/users/joey/code/stocks/dbingest app/main.ts"
+      ]
     ]
   },
   "version": "3.4.5"

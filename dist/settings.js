@@ -54,7 +54,7 @@ saveBtn.addEventListener('click', () => {
         url: dbUrl,
         port: dbPort
     };
-    ipcRenderer.send('db-info', payload);
+    ipcRenderer.send('save-db-info', payload);
 });
 // validation logic for test and save buttons
 $('form')

@@ -63,7 +63,7 @@ saveBtn.addEventListener('click', () => {
     port: dbPort
   };
 
-  ipcRenderer.send('db-info', payload);
+  ipcRenderer.send('save-db-info', payload);
 
 });
 

@@ -69,20 +69,7 @@ function createSettingsWindow() {
     slashes: true
   }));
   settingsWindow.removeMenu();
-  
 };
-
-// ipc listeners
-ipcMain.on('test-db-connection', (event, arg) => {
-  db.testConnection(arg.url, arg.port, arg.name);
-});
-
-ipcMain.on('db-info', (event, arg) => {
-  dbName = arg.name,
-  dbPort = arg.port,
-  dbUrl = arg.url
-  settingsWindow.close();
-});
 
 /**
  * Main logic for application
@@ -91,7 +78,34 @@ ipcMain.on('db-info', (event, arg) => {
 function main() {
   app.on('ready', onReady);
   app.on('window-all-closed', onClose);
-}
+};
+
+// ipc listeners
+
+ipcMain.on('test-db-connection', (event, arg) => {
+  db.testConnection(arg.url, arg.port, arg.name);
+});
+
+ipcMain.on('save-db-info', (event, arg) => {
+  dbName = arg.name,
+  dbPort = arg.port,
+  dbUrl = arg.url
+  settingsWindow.close();
+});
+
+ipcMain.on('ingest', (event, data) => {
+  console.log(data);
+})
+
+
+
+
+
+
+
+
+
+
 
 let menuTemplate = [
   {
